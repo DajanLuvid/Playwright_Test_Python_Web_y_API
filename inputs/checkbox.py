@@ -38,7 +38,7 @@ async def main():
         # ---- Finalización ----
         # Detenemos la captura de trazas y guardamos el archivo en la carpeta "logs"
         # Para ver el log debemos escribir en la terminal: playwright show-trace logs/trace.zip
-        await context.tracing.stop(path="logs/trace.zip")
+        await context.tracing.stop(path="logs/trace_checkbox.zip")
         # Cerramos el navegador
         await browser.close()
 
