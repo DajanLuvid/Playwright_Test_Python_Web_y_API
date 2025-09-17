@@ -1,82 +1,47 @@
+# 🚀 Automations with Playwright and Python
 
+Repository with practical examples of **automated tests** in Python using **Playwright**. It includes:  
+- a navigation test to access the Consulate page (RENIEC — Cuenca), and  
+- CRUD tests for the **Petstore API**.
 
-# CONSULTAR CONSULADO EN LA PAGINA DE LA RENIEC
+## 🎯 Goal
+Show real (UI + API) flows that are reproducible and easy to run, demonstrating automation and testing skills with Playwright and Pytest.
 
-Prueba automatizada con **Playwright** en Python para validar el flujo de navegación hacia la página del consulado de Cuenca.
+## ⚙️ Requirements
+- Python **3.10+**  
+- `pip` (package manager)
 
-## 📌 Requisitos
-- Python 3.10 o superior
-- pip (administrador de paquetes de Python)
-
-## 📦 Instalación de dependencias
-Ejecuta el siguiente comando en la terminal para instalar Playwright y Pytest:
-
-```sh
-pip install playwright pytest
-```
-
-Después, instala los navegadores necesarios para Playwright:
-
-```sh
-playwright install
-```
-
-Esto descargará y configurará los navegadores compatibles (Chromium, Firefox y WebKit).
-
-## 🚀 Cómo ejecutar las pruebas
-Si quieres correr la prueba de la página del consulado, usa:
-
-```sh
-pytest -s codegen_demo_reniec.py
-```
-
-## 📂 Estructura del proyecto
-```
-Pruebas Playwright/
-│── API/                  # Pruebas para API REST (si aplica)
-│── inputs/               # Archivos de entrada (si aplica)
-│── codegen_demo_reniec.py # Prueba automatizada de navegación
-│── pytest.ini            # Configuración de pytest
-│── README.md             # Documentación del proyecto
-```
-
-# CONSULTAR API DE PETSTORE
-
-Este proyecto contiene pruebas automatizadas de API utilizando Playwright con Python. Se realizan operaciones de tipo CRUD (Crear, Leer, Actualizar, Eliminar) sobre los servicios de la API Petstore.
-
-## Requisitos Previos
-
-Antes de ejecutar las pruebas, asegúrate de tener instalado lo siguiente:
-
-- Python 3.10 o superior
-- Playwright para Python
-- Pytest para la ejecución de pruebas
-
-Para instalar las dependencias necesarias (en caso no las hayas instalado en el ejemplo anterior), ejecuta:
-
+## 🧰 Quick Installation
+Run in your terminal:
 ```sh
 pip install playwright pytest
 playwright install
 ```
 
-## Estructura del Proyecto
+## ▶️ How to Run
+- **Web Test (RENIEC):**
+    pytest -s codegen_demo_reniec.py
 
-- `test_api_petstore.py`: Contiene las pruebas para la API Petstore.
-- `pytest.ini`: Archivo de configuración para pytest.
+- **API Tests (Petstore):**
+    cd API
+    pytest -s test_api_petstore.py
 
-## Ejecución de Pruebas
+## 📂 Project Structure
+Playwright Tests/
+│── API/                   # REST API tests
+│── inputs/                # Input files (if any)
+│── codegen_demo_reniec.py # RENIEC navigation test
+│── test_api_petstore.py   # CRUD tests for Petstore
+│── pytest.ini             # Pytest configuration
+│── README.md              # This file
 
-Para ejecutar las pruebas de la API, accede a la caperta **API** usa el siguiente comando:
+## ⚠️ Important Note about Petstore
+The public Petstore API can be unstable when many users test it simultaneously. Some tests may fail due to external conditions. For consistent results, run the tests in a controlled environment, use mocks, or clean up created resources at the end.
 
-```sh
-pytest -s test_api_petstore.py
-```
-
-### Nota Importante
-
-Las pruebas pueden fallar debido a que la API Petstore no es completamente estable para pruebas en simultáneo. Como múltiples usuarios pueden estar probando la API al mismo tiempo, es posible que algunas peticiones sean omitidas o que los datos sean eliminados antes de su validación. Se recomienda ejecutar las pruebas en un entorno aislado o verificar manualmente los resultados en caso de inconsistencias.
+## 🛠️ Best Practices
+- Always run `playwright install` before executing tests to ensure browsers are installed.  
+- Isolate test data when possible (avoid collisions on public APIs).
 
 ---
-**Autor:** David Luján
 
-
+**Author:** David Luján
