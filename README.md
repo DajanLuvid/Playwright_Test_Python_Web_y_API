@@ -27,6 +27,7 @@ playwright install
     pytest -s test_api_petstore.py
 
 ## 📂 Project Structure
+```sh
 Playwright Tests/
 │── API/                   # REST API tests
 │── inputs/                # Input files (if any)
@@ -34,6 +35,7 @@ Playwright Tests/
 │── test_api_petstore.py   # CRUD tests for Petstore
 │── pytest.ini             # Pytest configuration
 │── README.md              # This file
+```
 
 ## ⚠️ Important Note about Petstore
 The public Petstore API can be unstable when many users test it simultaneously. Some tests may fail due to external conditions. For consistent results, run the tests in a controlled environment, use mocks, or clean up created resources at the end.
@@ -45,3 +47,4 @@ The public Petstore API can be unstable when many users test it simultaneously. 
 ---
 
 **Author:** David Luján
+
